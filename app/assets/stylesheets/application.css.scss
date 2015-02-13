@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+//Import Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//Color Variables
+$pure-white: #F8F9FA;
+$eggshell: #dcdcdc;
+$slate: #555E67;
+$darkslate: #262626;
+$bluegray: #97A2AF;
+$gray: #B3BAC4;
+$lightblue: #B1CCDE;
+$lightslate: #636363;
+
+//Styles
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 46px;
+  font-weight: 400;
+  color: $pure-white;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  color: $eggshell;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: $slate;
+}
+
+h4 {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+  color: $slate;
+}
+
+h5 {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: $darkslate;
+}
+li {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: #555E67;
+}
+
+p {
+  color: $lightslate;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+

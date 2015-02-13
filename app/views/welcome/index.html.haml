@@ -1,5 +1,123 @@
-.container
+.navbar.navbar-default.navbar-fixed-top
+    .container-fluid
+        .navbar-header
+            %button{type: 'button', :class => 'navbar-toggle collapsed', :'data-toggle' => 'collapse', :'data-target' => '#bs-example-navbar-collapse-1'}
+                %span.sr-only
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+            %a.navbar-brand{href:'#'}
+                = image_tag 'mountains-logo.png', :id => 'logo'
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+            %ul.nav.navbar-nav.navbar-right
+                %li
+                    %a{href:'#about-me'}About
+                %li
+                    %a{href:'#work'}Work
+                %li
+                    %a{href:'#learn-more'}Contact
+.container-fluid#main-banner
+    .col-xs-12#main-banner-content
+        %h1 Let's Create.
+        %h2 Kelly McGee  /  Product Design  /  Development
+        %a.btn.btn-primary.btn-lrg.buttons{href: '#about-me'} Take A Spin
+.container-fluid.bucket#about-me
+    .row    
+        .col-sm-2
+        .col-sm-8#about-me-content
+            %h3 Hi There. I'm Kelly.
+            %p I believe in clean, empathetic design. I'm passionate about combining these fundamentals with products and interfaces to create experiences that have the power to change our daily lives. In my mind, technology today shouldn't be defined by hashtags and shameless selfies. With beautiful code and human centered design, I hope to make meaningful future products.
+            %p I'm currently a sophomore at MIT studying Mechanical Engineering and Product Design. I have over seven years of experience in Graphic Design and have worked on various tangible and intangible design projects. 
+            %p Feel free to check out some of my work below.
+            /= image_tag 'portrait.png', :id => 'portrait'
+        .col-sm-2
+/.containter-fluid.header#design-header
+/    .col-sm-5
+/    .col-sm-2
+/        %h3 Product Design
+/    .col-sm-5
+/.container-fluid.bucket#design
+.containter-fluid#development
+    .row#development-header
+        .col-sm-4
+        .col-sm-4 
+            %h4 Development
+        .col-sm-4
     .row
-        .col-lg-12
-            %h2 Welcome to Kelly McGee's Portfolio
+        = image_tag 'laptop-code.jpg', :id => 'img-responsive'
+.containter-fluid#work
+    .row
+        .row#work-header
+        .col-sm-4
+        .col-sm-4 
+            %h4 Recent Work
+        .col-sm-4
+    .carousel.slide{:id=>"slide-images", :data => {:ride => "carousel"}}
+        %ol
+            %li.active{:data => {:target => "slide-images", :slide_to => "0"}}
+            %li{:data => {:target => "slide-images", :slide_to => "1"}}
+            %li{:data => {:target => "slide-images", :slide_to => "2"}}
+        .carousel-inner
+            .item.active
+                %img{:src => "assets/hopp.jpg"}
+                .carousel-caption
+                    %a.btn.btn-primary.btn-lrg.buttons{:'aria-expanded' => "false", :'aria_controls' => "hopp", :data => {:toggle => "collapse", :target => "#hopp"}} Read More
+            .item
+                %img{:src => "assets/fanpics1.jpg"}
+                .carousel-caption
+                    %a.btn.btn-primary.btn-lrg.buttons{:'aria-expanded' => "false", :'aria_controls' => "fanpics", :data => {:toggle => "collapse", :target => "#fanpics"}} Read More
+        %a.left.carousel-control{:href => "#slide-images", :data => {:slide => "prev"}}
+            %span.glyphicon.glyphicon-chevron-left
+        %a.right.carousel-control{:href => "#slide-images", :data => {:slide => "next"}}
+            %span.glyphicon.glyphicon-chevron-right
+.container-fluid#hopp.collapse.work-bucket
+    .col-sm-1
+        %a= image_tag 'close.png', :class => 'close', :'aria-expanded' => "false", :'aria_controls' => "hopp", :'data-toggle' => "collapse", :'data-target' => "#hopp"
+    .col-sm-5#hopp-content
+        %h3 Mobile User Interface Design
+        %h5 Hopp | Cambridge, MA
+        %p Developed an iOS application for potential sale on the App Store. Created and implemented all user interface elements as well as the branding of the product alongside two software designers.
+    .col-sm-5.work-photos
+        = image_tag 'hopp2.jpg', id:'img-responsive'
+    .col-sm-1
+.container-fluid#fanpics.collapse.work-bucket
+    .col-sm-1
+        %a= image_tag 'close.png', :class => 'close', :'aria-expanded' => "false", :'aria_controls' => "fanpics", :'data-toggle' => "collapse", :'data-target' => "#fanpics"
+    .col-sm-5#fanpics-content
+        %h3 Website Design and Development
+        %h5 Fanpics | San Diego, CA
+        %p I worked alongside the Chief Creative Director and software engineers to help redesign Fanpics' company website, branding, and image. Our design process involved sketching mockups, branding and logo design, generating full layouts, and finally developing the site using Rails. 
+        %p Fanpics is a small technology startup focusing on the sports fan experience by implementing proprietary camera technologies with mobile applications into stadiums.
+        %a{href: "http://www.fanpics.com"} www.fanpics.com
+    .col-sm-5.work-photos
+        = image_tag 'fanpics2.jpg', id:'img-responsive'
+        = image_tag 'fanpics3.jpg', id:'img-responsive'
+    .col-sm-1
+.container-fluid#learn-more
+    .col-sm-1
+    .col-sm-4#learn-more-content
+        %h3 Want To Learn More?
+        %p Balancing school and a website ain't easy. If there's something else you'd like to know, feel free to shoot me a message below.
+        %form
+            .form-group
+                %input{:type => 'name', :id => 'input-name', :class => 'form-control', :placeholder => 'Name'}
+            .form-group
+                %input{:type => 'email', :id => 'input-email', :class => 'form-control', :placeholder => 'Email'}
+            .form-group
+                %textarea{:type => 'text', :class => 'form-control', :placeholder => 'Message', :rows => '1'}
+        %a.btn.btn-primary.btn-lrg#send{href: '#'} Send
+    .col-sm-7
+.container-fluid#social
+    .col-sm-3
+    .col-sm-2
+        = link_to image_tag('github.png', :class => 'social-icon', :id => 'github'), 'https://github.com/kellybmcgee'
+    .col-sm-2
+        = link_to image_tag('instagram.png', :class => 'social-icon', :id => 'instagram'), 'https://instagram.com/kellybmcgee'
+    .col-sm-2
+        = link_to image_tag('twitter.png', :class => 'social-icon', :id => 'twitter'), 'https://twitter.com/kellybmcgee'
+    .col-sm-3
+
+
+        
+
 
